@@ -14,6 +14,15 @@ import NewProduct from "./components/NewProduct";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import ActiveUser from "./components/ActiveUser";
+import Geeting from "./components/Geeting";
+import StateStudy from "./components/StateStudy";
+import ConditionalRender from "./components/ConditionalRender";
+import UserList from "./components/UserList";
+import FormHandle from "./components/FormHandle";
+import MountingPhase from "./components/MountingPhase";
+import PureComponent from "./components/PureComponent";
+import UseMemo from "./components/UseMemo";
+import Refs from "./components/Refs";
 const LazyLoad = React.lazy(() => import("./components/About"));
 const ProductLazyLoad = React.lazy(() => import("./components/Products"));
 function App() {
@@ -41,60 +50,78 @@ function App() {
     }
   };
   return (
-    <div
-      className={`bg-${mode === "light" ? "light" : "dark"} text-${
-        mode === "light" ? "dark" : "light"
-      }`}
-    >
-      <Navbar
-        title="App-Utils"
-        home="Home"
-        about="About Utilis-app"
-        mode={mode}
-        toggleMode={toggleMode}
-        switchLable={switchLable}
-      />
-      <Aleart alert={alert} />
-      <div className="container my-3 ">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Form
-                heading="Enter Text to analyze"
-                mode={mode}
-                showAlert={showAlert}
-              />
-            }
-          ></Route>
-          <Route
-            path="about"
-            element={
-              <Suspense fallback="Loading Lazy Component...">
-                <LazyLoad />
-              </Suspense>
-            }
-          ></Route>
-          <Route
-            path="products"
-            element={
-              <Suspense>
-                <ProductLazyLoad />
-              </Suspense>
-            }
-          >
-            <Route index element={<NewProduct />}></Route>
-            <Route path="feature" element={<Feature />}></Route>
-            <Route path="newProducts" element={<NewProduct />}></Route>
-          </Route>
-          <Route path="/users" element={<Users />}>
-            <Route path="userDetails/:id" element={<UserDetails />}></Route>
-          </Route>
-          <Route path="/userList" element={<ActiveUser />}></Route>
-          <Route path="*" element={<PageError />}></Route>
-        </Routes>
-      </div>
-    </div>
+    // <div
+    //   className={`bg-${mode === "light" ? "light" : "dark"} text-${
+    //     mode === "light" ? "dark" : "light"
+    //   }`}
+    // >
+    //   <Navbar
+    //     title="App-Utils"
+    //     home="Home"
+    //     about="About Utilis-app"
+    //     mode={mode}
+    //     toggleMode={toggleMode}
+    //     switchLable={switchLable}
+    //   />
+    //   <Aleart alert={alert} />
+    //   <div className="container my-3 ">
+    //     <Routes>
+    //       <Route
+    //         path="/"
+    //         element={
+    //           <Form
+    //             heading="Enter Text to analyze"
+    //             mode={mode}
+    //             showAlert={showAlert}
+    //           />
+    //         }
+    //       ></Route>
+    //       <Route
+    //         path="about"
+    //         element={
+    //           <Suspense fallback="Loading Lazy Component...">
+    //             <LazyLoad />
+    //           </Suspense>
+    //         }
+    //       ></Route>
+    //       <Route
+    //         path="products"
+    //         element={
+    //           <Suspense>
+    //             <ProductLazyLoad />
+    //           </Suspense>
+    //         }
+    //       >
+    //         <Route index element={<NewProduct />}></Route>
+    //         <Route path="feature" element={<Feature />}></Route>
+    //         <Route path="newProducts" element={<NewProduct />}></Route>
+    //       </Route>
+    //       <Route path="/users" element={<Users />}>
+    //         <Route path="userDetails/:id" element={<UserDetails />}></Route>
+    //       </Route>
+    //       <Route path="/userList" element={<ActiveUser />}></Route>
+    //       <Route path="*" element={<PageError />}></Route>
+    //     </Routes>
+    //   </div>
+    // </div>
+    <>
+      {/* <Geeting userName="Fahed" heroName="Salman Khan">
+        <p>THis is Text</p>
+      </Geeting>
+      <Geeting userName="Rahman" />
+      <Geeting userName="Mohd" />
+      <StateStudy /> */}
+      {/* <ConditionalRender /> */}
+      {/* <UserList /> */}
+      {/* <User />; */}
+
+      {/* <FormHandle /> */}
+
+      {/* <MountingPhase name="Rahman" /> */}
+      {/* <PureComponent /> */}
+      {/* <UseMemo /> */}
+      <Refs />
+    </>
   );
 }
 
